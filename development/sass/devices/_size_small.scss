@@ -1,0 +1,9 @@
+@media screen 
+	and (min-width: $device_size_small)
+	and (max-width: $device_size_medium) 
+{
+	
+	@include setHeaderMenuPadding(8px 14px);
+	@include setCenterHeader();
+
+}

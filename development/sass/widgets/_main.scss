@@ -1,0 +1,14 @@
+div.widget {
+	h4 {
+		@include setFont(20px, #7f8c8c, bold);
+		margin-bottom: 15px;
+	}
+	margin-bottom: $widget-margin-bottom;
+}
+
+@import "widget-ads";
+@import "widget-tags";
+@import "widget-address";
+@import "widget-list";
+@import "widget-blog";
+

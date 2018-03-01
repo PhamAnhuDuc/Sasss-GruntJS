@@ -1,0 +1,24 @@
+section.section-breadcrumb {
+	background: $breadcrumb-color-background;
+	padding: 2% 0;
+
+	h3.title {
+		@include setFont(24px, $breadcrumb-color-text, bold );
+		text-transform: uppercase;
+	}
+
+	ol.breadcrumb {
+		li {
+			a {
+				@include setFont(14px, $breadcrumb-color-text);
+				&:hover {
+					color: #F15F43
+				}
+			}
+
+			&.active {
+				color: #888888;
+			}
+		}
+	}
+}

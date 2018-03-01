@@ -1,0 +1,137 @@
+// Navigation Padding
+@mixin setHeaderMenuPadding($padding){
+	header nav.header-menu ul.menu > li > a {
+	    padding: $padding;
+	}
+}
+
+//  Center Header
+@mixin setCenterHeader() {
+	header {
+		text-align: center;
+
+		div.header-logo {
+			float: none !important;
+			margin-bottom: 10px;
+		}
+
+		nav.header-menu {
+			float: none !important;
+		}
+	}
+}
+
+// Navigation On Mobile
+@mixin setNavigationOnMobile() {
+	header {
+		div.header-logo, nav.header-menu {
+			float: none !important;
+		}
+
+		nav.header-menu {
+			ul.menu {
+				display: none;
+
+				> li{
+					display: block;
+					width: 100%;
+
+					a{
+						background: #ffffff !important; 
+						color: #797979 !important; 
+						border-top:1px solid #e0e0e0 !important; 
+					}
+					
+					&:hover a, &.activate a {
+						background: #f0f0f0 !important;
+						@include setBoxShadowBottom(0px, #47817E !important);
+						@include setBorderRadius(0px !important);
+					}
+
+					ul {
+						display:none;
+					}
+					
+				}
+			}	
+		}
+	}
+
+	a.mobile-menu {
+		display: block !important;
+    	margin-top: 20px;
+	}
+}
+
+// Breadcrumb Title Size
+@mixin setBreadcrumbTitleSize($size: 18px){
+	section.section-breadcrumb {
+		h3.title {
+			font-size: $size !important;
+		}
+	}
+}
+
+// Article
+@mixin setArticle($distanceLine: 12px, $marginBottom: 30px, $marginRightTagA: 12px){
+	.no-padding-left {
+    	padding-left: 15px !important;
+	}
+
+	div.article {
+		margin-bottom: $marginBottom !important;
+
+		&:last-child {
+			margin-bottom: 0px !important;
+		}
+		
+		> * {
+			margin-bottom: $distanceLine !important;
+		}
+		
+		p.info {
+			a {
+				margin-right: $marginRightTagA !important;
+			}
+		}
+
+		a.view-more {
+		    padding: 12px 20px !important;
+		}
+	}
+}
+
+// Widget Size
+@mixin setWidgetSize($size: 30px){
+	div.widget {
+		&:first-child {
+			margin-top: $size !important;
+		}
+		margin-bottom: $size !important;
+	}
+}
+
+// Footer Top
+@mixin setFooterTop($marginBottom: 12px) {
+	.footer-column {
+		margin-bottom: $marginBottom;
+	}
+
+	// div.widget-blog {
+	// 	div.media-body {
+	// 		span {
+	// 			display: none;
+	// 		}
+	// 	}
+	// }
+}
+
+// Footer Bottom
+@mixin setFooterBottom() {
+	div.footer-bottom {
+		text-align: center;
+		div.copyright, div.social-icons {
+			float: none !important;
+		}
+	}
+}

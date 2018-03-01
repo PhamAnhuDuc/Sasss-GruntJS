@@ -1,0 +1,32 @@
+div.footer-bottom {
+
+	background-color: #6AB3AC;
+	padding: 2% 0;
+
+	div.social-icons {
+		ul {
+			li {
+				text-align: center;
+				display: inline-block;
+				margin-left: 20px;
+				a {
+					display: inline-block;
+					i {
+						@include setFont(24px, $color-white);
+					}
+
+					&:hover i{
+						color: #E8645A;
+					}
+				}
+			}
+		}
+	}
+
+	div.copyright {
+		p {
+			@include setFont(14px, $color-white);
+			@include setTagAHover(#E2534B, $color-white);
+		}
+	}
+}

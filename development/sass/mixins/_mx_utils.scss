@@ -1,0 +1,77 @@
+/* ==================== BORDER RADIUS ==================== */
+/* Ref: 
+    http://www.w3schools.com/css/css3_borders.asp 
+    http://border-radius.com/
+    border-radius: tl tr br bl:
+*/
+
+@mixin setBorderRadius($value){
+     border-radius: $value;
+    -webkit-border-radius: $value; 
+    -moz-border-radius: $value;       
+    -o-border-radius: $value;          // for Opera and Iphone5 Mobile**
+}
+
+
+/* ==================== BOX SHADOW ==================== */
+/* Ref: 
+    http://www.cssmatic.com/box-shadow
+*/
+
+@mixin setBoxShadowBottom($size, $color){
+    box-shadow:  inset 0px $size 0px 0px $color;
+    -webkit-box-shadow: inset 0px $size 0px 0px $color;
+    -moz-box-shadow: inset 0px $size 0px 0px $color;
+    -o-box-shadow: inset 0px $size 0px 0px $color;
+}
+
+/* ==================== Set Font ==================== */
+@mixin setFont($fontSize, $color, $fontWeight: null, $fontFamily: null){
+	color: $color;
+	font-size:$fontSize;
+
+	@if $fontWeight != null {
+		font-weight: $fontWeight;	
+	}
+
+	@if $fontFamily != null {
+		font-family: $fontFamily;	
+	}
+}
+
+/* ==================== HOVER A ==================== */
+/* Ref: 
+*/
+
+@mixin setTagAHover($color, $colorHover){
+    a {
+        color: $color; 
+        &:hover{
+            color: $colorHover;
+        }
+    }
+}
+
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin setColumn($pColum, $pColumMargin  ) {
+
+    width: (100% - ($pColum - 1) * $pColumMargin) / $pColum;
+    margin-right: $pColumMargin;
+
+    &:nth-child(#{$pColum}n) { // 5
+        margin-right: 0%;
+        margin-bottom: $pColumMargin;
+    }
+
+    &:last-child {
+         margin-bottom: 0%;
+    }
+}

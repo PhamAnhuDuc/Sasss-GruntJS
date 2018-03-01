@@ -1,0 +1,29 @@
+* {
+	font-family: $font-text;
+}
+
+a {
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+// Reset h1 h2 h3 h4 h5 h6
+@each $element in $heading {
+	#{$element} {
+		margin: 0px;
+		padding: 0px;
+	}
+}
+
+// Reset breadcrumb
+.breadcrumb {
+    padding: 0px;
+    margin-bottom: 0px;
+}

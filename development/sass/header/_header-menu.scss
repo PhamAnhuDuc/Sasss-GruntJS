@@ -1,0 +1,96 @@
+nav.header-menu {
+	
+	%menu-active-or-hover {
+		background: #62A29E;
+		@include setBorderRadius(5px);
+		@include setBoxShadowBottom(-4px, #47817E);
+	}
+
+	%sub-menu-active-or-hover {
+		background: #f0f0f0;
+		border-left: 3px solid #62A29E;
+		color: #797979;
+	}
+
+	ul li {
+		list-style: none;
+		position: relative;
+		display: inline-block;
+		z-index: 100;
+		a {
+			text-transform: uppercase;
+			display: block;
+		}
+	}
+
+	// Menu Level 1
+	ul.menu {
+		> li {
+			> a {
+				@include setFont(16px, $color-white, bold );
+				padding: 10px 24px;
+			}
+
+			&.activate, &:hover {
+				> a {
+					@extend %menu-active-or-hover;
+				}
+			}
+
+			&:hover {
+				ul.sub-menu {
+					display: block;
+				}
+			}
+		}
+	}
+
+	// Menu Level 2
+	ul.sub-menu, ul.sub-sub-menu {
+		display: none;
+		position: absolute;
+		top: 42px;
+		left: 0px;
+
+		> li {
+			width: 155px;
+			> a {
+				@include setFont(13px, $color-white); 
+				border-left: 3px solid #C03C35;
+				background: #E2534B;
+				padding: 10px 20px;
+			}
+
+			&:hover {
+				> a {
+					@extend %sub-menu-active-or-hover;
+				}
+
+				> ul.sub-sub-menu { 
+					display: block;
+				}
+			}
+		}
+	}
+	
+	// Menu Level 3
+	ul.sub-sub-menu {
+		top: 0px;
+		left: 155px;
+	}
+}
+
+a.mobile-menu{
+	display: none;
+	width: 100%;
+	padding: 12px;
+	background: #528B86;
+	@include setFont(16px, $color-white); 
+	text-transform: uppercase;
+	
+	&:hover{
+		background:#447F7A;
+	}
+}
+
+

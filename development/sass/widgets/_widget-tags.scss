@@ -1,0 +1,36 @@
+div.widget-tags {
+
+	%activeTag {
+		background: #70C570;
+		color: #ffffff;
+	}
+
+	ul.widget-tags-list {
+		list-style: none;
+
+		li {
+			margin:10px 5px 0 0;
+			display: inline-block;
+
+			a {
+				display: block;
+				text-transform: capitalize;
+				background: #808B8D;
+				padding: 8px 14px;
+
+				@include setFont(13px, $color-white);
+				@include setBorderRadius(4px);
+				
+				&:hover {
+					@extend %activeTag;
+				}
+			}
+
+			&.active {
+				a {
+					@extend %activeTag;
+				}
+			}
+		}
+	}
+}

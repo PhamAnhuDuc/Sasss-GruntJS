@@ -1,0 +1,30 @@
+
+/* ==================== BOX SHADOW ==================== */
+/* Ref: 
+    http://www.cssmatic.com/box-shadow
+*/
+
+@mixin setBoxShadowBottom($size, $color){
+    box-shadow:  inset 0px $size 0px 0px $color;
+    -webkit-box-shadow: inset 0px $size 0px 0px $color;
+    -moz-box-shadow: inset 0px $size 0px 0px $color;
+    -o-box-shadow: inset 0px $size 0px 0px $color;
+}
+/*====================SET FONT============================================*/
+@mixin setFont($fontSize, $color , $fontWeight: null  , $fontFamily : null ) {
+	color : $color;
+	font-size: $fontSize;
+	@if $fontWeight != null {
+		font-weight: $fontWeight;
+	}
+	@if $fontFamily != null {
+		font-family: $fontFamily;
+	}
+}
+/*====================SET BORDER==========================================================*/
+@mixin setBorderRadius($value) {
+	border-radius: $value;
+	-moz-border-radius: $value;
+	-webkit-border-radius: $value;
+	border: 0px solid #000000;
+}
